@@ -1,0 +1,458 @@
+/* 基础变量 - 采用更专业的色调 */
+:root {
+    --primary-color: #0f172a; /* 深邃的靛蓝色，更显专业 */
+    --accent-color: #3b82f6;  /* 明亮的蓝色作为强调色 */
+    --primary-hover: #1e293b;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+    --bg-color: #ffffff;
+    --bg-secondary: #f8fafc;
+    --border-color: #e2e8f0;
+    --container-width: 1000px; /* 稍微缩小宽度，让内容更集中 */
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7; /* 增加行高，提升阅读体验 */
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 标题样式优化 */
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    text-align: left; /* 改为左对齐更符合现代作品集风格 */
+    color: var(--primary-color);
+    letter-spacing: -0.025em;
+}
+
+/* 导航栏 - 更简洁的设计 */
+header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section - 极简主义 */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding-top: 70px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--primary-color);
+    letter-spacing: -0.05em;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+/* 按钮 - 更加醒目 */
+.hero-btns {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px; /* 全圆角按钮更现代 */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.2);
+}
+
+.btn-outline {
+    border: 2px solid var(--border-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-color);
+    background-color: var(--bg-secondary);
+    transform: translateY(-3px);
+}
+
+/* Section 通用间距 */
+section {
+    padding: 120px 0;
+}
+
+/* About Section */
+.about {
+    background-color: var(--bg-secondary);
+}
+
+.about-text {
+    max-width: 700px;
+}
+
+.about-text p {
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    color: var(--text-color);
+}
+
+/* Education Section */
+.education {
+    background-color: var(--bg-color);
+}
+
+.timeline {
+    max-width: 100%;
+}
+
+.timeline-item {
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    transition: var(--transition);
+}
+
+.timeline-item:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.time {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.content ul {
+    margin-top: 1.5rem;
+}
+
+.content li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+}
+
+.content li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+/* Projects Section */
+.projects {
+    background-color: var(--bg-secondary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-color);
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-info p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tags span {
+    background: var(--bg-secondary);
+    color: var(--text-light);
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+}
+
+/* Skills Section */
+.skills {
+    background-color: var(--bg-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.skill-category h3 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-list span {
+    font-weight: 500;
+    color: var(--text-color);
+    background: var(--bg-secondary);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+/* Resume Section */
+.resume-section {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: 40px;
+    margin: 0 1.5rem 120px;
+    padding: 80px 2rem;
+}
+
+.resume-section .section-title {
+    color: white;
+    text-align: center;
+}
+
+.resume-section p {
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    opacity: 0.8;
+}
+
+.resume-section .btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.resume-section .btn-primary:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--bg-color);
+}
+
+.contact-content {
+    text-align: left;
+}
+
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.contact-list li {
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-list strong {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.contact-list a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.contact-list a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 2.5rem;
+    }
+
+    section {
+        padding: 80px 0;
+    }
+}
